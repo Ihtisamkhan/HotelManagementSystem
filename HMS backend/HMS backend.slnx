@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="E:/HotelManagementSystem/HMS backend/HMS backend/HMS backend.csproj" />
+  <Project Path="E:/HotelManagementSystem/HMS backend/HMS.Application/HMS.Application.csproj" />
+  <Project Path="E:/HotelManagementSystem/HMS backend/HMS.Domain/HMS.Domain.csproj" />
+  <Project Path="E:/HotelManagementSystem/HMS backend/HMS.Infrastructure/HMS.Infrastructure.csproj" />
+  <Project Path="E:/HotelManagementSystem/HMS backend/HMS.Persistence/HMS.Persistence.csproj" />
+</Solution>
