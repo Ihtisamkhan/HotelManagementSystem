@@ -1,0 +1,43 @@
+<div class="container mt-4">
+
+    <h2 class="mb-4">
+        Available Rooms
+    </h2>
+
+    <table class="table table-bordered table-hover">
+
+        <thead class="table-dark">
+            <tr>
+                <th>Room No</th>
+                <th>Room Type</th>
+                <th>Floor</th>
+                <th>Price Per Night</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr *ngFor="let room of rooms">
+
+                <td>{{ room.roomNumber }}</td>
+
+                <td>{{ room.roomTypeName }}</td>
+
+                <td>{{ room.floor }}</td>
+
+                <td>{{ room.pricePerNight }}</td>
+
+                <td>
+                    <span class="badge bg-success">
+                        Available
+                    </span>
+                </td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</div>

@@ -1,0 +1,77 @@
+<div class="container mt-5">
+
+    <h2 class="text-center mb-4">
+        Available Rooms
+    </h2>
+
+    <p class="text-center fw-bold">
+        Total Rooms: {{ rooms.length }}
+    </p>
+
+    <div class="row">
+
+        <div
+            class="col-lg-4 col-md-6 mb-4"
+            *ngFor="let room of rooms">
+
+            <div class="card shadow h-100">
+
+                <img
+                    src="{{ getRoomImage(room.roomTypeName) }}"
+                    class="card-img-top"
+                    style="height:220px; object-fit:cover;">
+
+                <div class="card-body">
+
+                    <h4>{{ room.roomTypeName }}</h4>
+
+                    <p>
+                        <strong>Room Number:</strong>
+                        {{ room.roomNumber }}
+                    </p>
+
+                    <p>
+                        <strong>Floor:</strong>
+                        {{ room.floor }}
+                    </p>
+
+                     <p>
+                        <strong>RoomSize:</strong>
+                        {{ room.roomsize }}
+                    </p>
+
+                    <p>
+                        <strong>Price:</strong>
+                        Rs. {{ room.pricePerNight }}
+                    </p>
+
+                    <p>
+                        <strong>Status:</strong>
+                        {{ getStatus(room.status) }}
+                    </p>
+
+                    <p>
+                        {{ room.description }}
+                    </p>
+
+                </div>
+
+                <div class="card-footer bg-white">
+
+                    <a
+                        [routerLink]="['/book-room', room.roomId]"
+                        class="btn btn-success w-100">
+
+                        Book Now
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

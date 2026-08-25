@@ -1,0 +1,85 @@
+<div class="container mt-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-6">
+
+            <div class="card shadow">
+
+                <div class="card-header text-center">
+
+                    <h3>Book Room</h3>
+
+                </div>
+
+                <div class="card-body">
+
+                    <div *ngIf="room">
+
+                        <h4>{{ room.roomTypeName }}</h4>
+
+                        <p><strong>Room Number:</strong> {{ room.roomNumber }}</p>
+
+                        <p><strong>Floor:</strong> {{ room.floor }}</p>
+
+                        <p><strong>Price:</strong> Rs. {{ room.pricePerNight }}</p>
+
+                    </div>
+
+                    <hr>
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+
+                            Check-In Date
+
+                        </label>
+
+                        <input
+
+                            type="date"
+
+                            class="form-control"
+
+                            [(ngModel)]="booking.checkInDate">
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+
+                            Check-Out Date
+
+                        </label>
+
+                        <input
+
+                            type="date"
+
+                            class="form-control"
+
+                            [(ngModel)]="booking.checkOutDate">
+
+                    </div>
+
+                    <button
+
+                        class="btn btn-success w-100"
+
+                        (click)="bookRoom()">
+
+                        Book Now
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,28 @@
+<div class="container mt-4">
+
+<h2>{{role}} List</h2>
+
+<table class="table table-bordered table-hover">
+<thead class="table-dark">
+<tr>
+
+<th>Name</th>
+<th>Username</th>
+<th>Email</th>
+<th>Phone</th>
+
+
+</tr>
+</thead>
+<tr *ngFor="let user of users">
+
+<td>{{user.fullName}}</td>
+<td>{{user.username}}</td>
+<td>{{user.email}}</td>
+<td>{{user.phoneNumber}}</td>
+
+</tr>
+
+</table>
+
+</div>

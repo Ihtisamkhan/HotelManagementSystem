@@ -1,0 +1,54 @@
+<div class="container mt-4">
+
+    <h2 class="mb-4">
+        Maintenance Rooms
+    </h2>
+
+    <table class="table table-bordered table-hover">
+
+        <thead class="table-dark">
+
+            <tr>
+
+                <th>Room No</th>
+                <th>Room Type</th>
+                <th>Floor</th>
+               
+                <th>Price</th>
+                <th>Status</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr *ngFor="let room of rooms">
+
+                <td>{{room.roomNumber}}</td>
+
+                <td>{{room.roomTypeName}}</td>
+
+                <td>{{room.floor}}</td>
+
+                
+
+                <td>{{room.pricePerNight}}</td>
+
+                <td>
+
+                    <span class="badge bg-warning text-dark">
+
+                        Maintenance
+
+                    </span>
+
+                </td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</div>

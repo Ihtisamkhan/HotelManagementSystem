@@ -1,0 +1,41 @@
+<div class="container mt-4">
+
+    <h2>Completed Tasks</h2>
+
+    <table class="table table-bordered table-hover">
+
+        <thead class="table-dark">
+
+            <tr>
+
+                <th>Room</th>
+
+                <th>Title</th>
+
+                <th>Description</th>
+
+                <th>Completed Date</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr *ngFor="let task of tasks">
+
+                <td>{{task.roomNumber}}</td>
+
+                <td>{{task.title}}</td>
+
+                <td>{{task.description}}</td>
+
+                <td>{{task.completedDate | date}}</td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</div>

@@ -1,0 +1,227 @@
+<div class="container mt-4">
+
+    <h2 class="text-center mb-4">
+        Owner Dashboard
+    </h2>
+
+    
+
+    <!-- Rooms -->
+
+    <h4 class="mb-3">Room Statistics</h4>
+
+    <div class="row">
+
+        <div class="col-md-3 mb-3">
+            <div class="card bg-primary text-white shadow">
+                <div class="card-body text-center">
+                    <h5>Total Rooms</h5>
+                    <h2>{{dashboard.totalRooms}}</h2>
+                    <a
+routerLink="/owner-room-details"
+class="btn btn-light btn-sm mt-2">
+
+View Details
+
+</a>
+                </div>
+            </div>
+        </div>    
+
+        <div class="col-md-3 mb-3">
+            <div class="card bg-success text-white shadow">
+                <div class="card-body text-center">
+                    <h5>Available</h5>
+                    <h2>{{dashboard.availableRooms}}</h2>
+                    <a
+routerLink="/available-rooms"
+class="btn btn-light btn-sm mt-2">
+
+View Details
+
+</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-3">
+            <div class="card bg-danger text-white shadow">
+                <div class="card-body text-center">
+                    <h5>Occupied</h5>
+                    <h2>{{dashboard.occupiedRooms}}</h2>
+                    <a
+routerLink="/occupied-rooms"
+class="btn btn-light btn-sm mt-2">
+
+View Details
+
+</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-3">
+            <div class="card bg-warning shadow">
+                <div class="card-body text-center">
+                    <h5>Maintenance</h5>
+                    <h2>{{dashboard.maintenanceRooms}}</h2>
+                    <a
+routerLink="/maintenance-rooms"
+class="btn btn-light btn-sm mt-2">
+
+View Details
+
+</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Users -->
+
+    <h4 class="mt-4 mb-3">Users</h4>
+
+    <div class="row">
+
+        <div class="col-md-4 mb-3">
+            <div class="card shadow">
+                <div class="card-body text-center">
+                    <h5>Customers</h5>
+                    <h2>{{dashboard.totalCustomers}}</h2>
+                   <a
+routerLink="/user-details/Customer"
+class="btn btn-primary btn-sm">
+
+View Details
+
+</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card shadow">
+                <div class="card-body text-center">
+                    <h5>Managers</h5>
+                    <h2>{{dashboard.totalManagers}}</h2>
+                   <a
+routerLink="/user-details/Manager"
+class="btn btn-primary btn-sm">
+
+View Details
+
+</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card shadow">
+                <div class="card-body text-center">
+                    <h5>Receptionists</h5>
+                    <h2>{{dashboard.totalReceptionists}}</h2>
+                   <a
+routerLink="/user-details/Receptionist"
+class="btn btn-primary btn-sm">
+
+View Details
+
+</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bookings -->
+
+    <h4 class="mt-4 mb-3">Bookings</h4>
+
+    <div class="row">
+
+        <div class="col-md-4 mb-3">
+            <div class="card bg-info text-white shadow">
+                <div class="card-body text-center">
+                    <h5>Total</h5>
+                    <h2>{{dashboard.totalBookings}}</h2>
+                    <a
+routerLink="/total-bookings"
+class="btn btn-light btn-sm mt-2">
+
+View Details
+
+</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card bg-warning shadow">
+                <div class="card-body text-center">
+                    <h5>Pending</h5>
+                    <h2>{{dashboard.pendingBookings}}</h2>
+                    <a
+routerLink="/owner-pending-bookings"
+class="btn btn-light btn-sm mt-2">
+
+View Details
+
+</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2 mb-3">
+            <div class="card bg-success text-white shadow">
+                <div class="card-body text-center">
+                    <h5>Accepted</h5>
+                    <h2>{{dashboard.acceptedBookings}}</h2>
+                        <a
+routerLink="/owner-accepted-bookings"
+class="btn btn-light btn-sm mt-2">
+
+View Details
+
+</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2 mb-3">
+            <div class="card bg-danger text-white shadow">
+                <div class="card-body text-center">
+                    <h5>Rejected</h5>
+                    <h2>{{dashboard.rejectedBookings}}</h2>
+                            <a
+routerLink="/owner-rejected-bookings"
+class="btn btn-light btn-sm mt-2">
+
+View Details
+
+</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <hr class="my-5">
+
+<h3 class="mb-4">
+    Employee Management
+</h3>
+
+<div class="d-flex gap-3 flex-wrap">
+
+    <a
+        routerLink="/create-manager"
+        class="btn btn-primary">
+
+        Create Manager
+
+    </a>
+
+</div>
+
+</div>

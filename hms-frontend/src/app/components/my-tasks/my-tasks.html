@@ -1,0 +1,55 @@
+<div class="container mt-4">
+
+    <h2>My Tasks</h2>
+
+    <table class="table table-bordered table-hover">
+
+        <thead class="table-dark">
+
+            <tr>
+
+                <th>Room</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Status</th>
+                <th>Assigned Date</th>
+                <th>Action</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr *ngFor="let task of tasks">
+
+                <td>{{task.roomNumber}}</td>
+
+                <td>{{task.title}}</td>
+
+                <td>{{task.description}}</td>
+
+                <td>{{task.status}}</td>
+
+                <td>{{task.assignedDate | date}}</td>
+
+                <td>
+
+                    <button
+                        class="btn btn-success btn-sm"
+                        (click)="completeTask(task.staffTaskId)"
+                        [disabled]="task.status==='Completed'">
+
+                        Complete
+
+                    </button>
+
+                </td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</div>

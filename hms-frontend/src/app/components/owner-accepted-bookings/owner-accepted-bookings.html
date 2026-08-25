@@ -1,0 +1,84 @@
+<div class="container mt-4">
+
+    <h2 class="mb-4">
+        Accepted Bookings
+    </h2>
+
+    <table class="table table-bordered table-hover">
+
+        <thead class="table-dark">
+
+            <tr>
+
+                <th>Booking ID</th>
+                <th>Customer</th>
+                <th>Room</th>
+                <th>Check In</th>
+                <th>Check Out</th>
+                <th>Status</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr *ngFor="let booking of bookings">
+
+                <td>{{booking.bookingId}}</td>
+
+                <td>{{booking.customerName}}</td>
+
+                <td>{{booking.roomNumber}}</td>
+
+                <td>{{booking.checkInDate | date}}</td>
+
+                <td>{{booking.checkOutDate | date}}</td>
+
+                <td>
+
+                    <span class="badge bg-warning"
+                        *ngIf="booking.status==0">
+
+                        Pending
+
+                    </span>
+
+                    <span class="badge bg-success"
+                        *ngIf="booking.status==1">
+
+                        Accepted
+
+                    </span>
+
+                    <span class="badge bg-danger"
+                        *ngIf="booking.status==2">
+
+                        Rejected
+
+                    </span>
+
+                    <span class="badge bg-primary"
+                        *ngIf="booking.status==3">
+
+                        Checked In
+
+                    </span>
+
+                    <span class="badge bg-dark"
+                        *ngIf="booking.status==4">
+
+                        Checked Out
+
+                    </span>
+
+                </td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
+

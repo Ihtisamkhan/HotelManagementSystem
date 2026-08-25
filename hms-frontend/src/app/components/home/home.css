@@ -1,0 +1,41 @@
+.hero{
+
+    padding:70px 0;
+
+}
+
+.hero img{
+
+    height:420px;
+
+    width:100%;
+
+    object-fit:cover;
+
+}
+
+.card img{
+
+    height:220px;
+
+    object-fit:cover;
+
+}
+
+.card{
+
+    transition:.3s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+footer{
+
+    margin-top:40px;
+
+}

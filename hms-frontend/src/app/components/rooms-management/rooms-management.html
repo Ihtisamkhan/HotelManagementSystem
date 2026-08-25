@@ -1,0 +1,296 @@
+<div class="container mt-4">
+
+    <h2 class="text-center mb-4">
+        Room Management
+    </h2>
+
+    <!-- Form -->
+
+    <div class="card shadow mb-4">
+
+        <div class="card-header">
+
+            <h4>
+                {{ isEdit ? 'Update Room' : 'Add Room' }}
+            </h4>
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="row">
+
+                <!-- Room Number -->
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+                        Room Number
+                    </label>
+
+                    <input
+                        type="text"
+                        class="form-control"
+                        [(ngModel)]="room.roomNumber">
+
+                </div>
+
+                <!-- Room Type -->
+                
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+                        Room Type
+                    </label>
+
+                    <select
+                        class="form-select"
+                        [(ngModel)]="room.roomTypeId">
+
+                        <option [ngValue]="''">
+                            Select Room Type
+                        </option>
+
+                        <option
+                            *ngFor="let type of roomTypes"
+                            [ngValue]="type.roomTypeId">
+
+                            {{ type.name }}
+
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- Floor -->
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+                        Floor
+                    </label>
+
+                    <input
+                        type="text"
+                        class="form-control"
+                        [(ngModel)]="room.floor">
+
+                </div>
+
+                <!-- Price -->
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+                        Price Per Night
+                    </label>
+
+                    <input
+                        type="number"
+                        class="form-control"
+                        [(ngModel)]="room.pricePerNight">
+
+                </div>
+
+                <!-- Status -->
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+                        Status
+                    </label>
+
+                    <select
+                        class="form-select"
+                        [(ngModel)]="room.status">
+
+                        <option
+                            *ngFor="let status of statuses"
+                            [ngValue]="status.id">
+
+                            {{ status.name }}
+
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+                        RoomSize
+                    </label>
+
+                    <input
+                        type="text"
+                        class="form-control"
+                        [(ngModel)]="room.roomsize">
+
+                </div>
+
+               
+
+                <!-- Description -->
+
+                <div class="col-md-12 mb-3">
+
+                    <label class="form-label">
+                        Description
+                    </label>
+
+                    <textarea
+                        rows="3"
+                        class="form-control"
+                        [(ngModel)]="room.description">
+                    </textarea>
+
+                </div>
+
+            </div>
+
+            <button
+                class="btn btn-success me-2"
+                (click)="saveRoom()">
+
+                {{ isEdit ? 'Update Room' : 'Save Room' }}
+
+            </button>
+
+            <button
+                *ngIf="isEdit"
+                class="btn btn-secondary"
+                (click)="cancelEdit()">
+
+                Cancel
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- Table -->
+
+    <div class="card shadow">
+
+        <div class="card-header">
+
+            <h4>
+                Rooms
+            </h4>
+
+        </div>
+
+        <div class="card-body">
+
+            <table class="table table-bordered table-hover align-middle">
+
+                <thead class="table-dark">
+
+                    <tr>
+
+                        <th>Room No</th>
+
+                        <th>Room Type</th>
+
+                        <th>Floor</th>
+
+                        <th>Price</th>
+
+                        <th>Status</th>
+
+                        <th width="180">
+                            Actions
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr *ngFor="let room of rooms">
+
+                        <td>{{ room.roomNumber }}</td>
+
+                        <td>{{ room.roomTypeName }}</td>
+
+                        <td>{{ room.floor }}</td>
+
+                        <td>
+                            Rs. {{ room.pricePerNight }}
+                        </td>
+
+                        <td>
+
+                            <span
+                                class="badge bg-success"
+                                *ngIf="room.status==0">
+
+                                Available
+
+                            </span>
+
+                            <span
+                                class="badge bg-danger"
+                                *ngIf="room.status==1">
+
+                                Occupied
+
+                            </span>
+
+                            <span
+                                class="badge bg-warning text-dark"
+                                *ngIf="room.status==2">
+
+                                Maintenance
+
+                            </span>
+
+                        </td>
+
+                        <td>
+
+                            <button
+                                class="btn btn-warning btn-sm me-2"
+                                (click)="editRoom(room)">
+
+                                Edit
+
+                            </button>
+
+                            <button
+                                class="btn btn-danger btn-sm"
+                                (click)="deleteRoom(room.roomId)">
+
+                                Delete
+
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                    <tr *ngIf="rooms.length == 0">
+
+                        <td
+                            colspan="6"
+                            class="text-center">
+
+                            No Rooms Found
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>

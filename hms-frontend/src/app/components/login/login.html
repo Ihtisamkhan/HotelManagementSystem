@@ -1,0 +1,73 @@
+<div class="container mt-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-5">
+
+            <div class="card shadow">
+
+                <div class="card-header text-center bg-primary text-white">
+
+                    <h3>Customer Login</h3>
+
+                </div>
+
+                <div class="card-body">
+
+                    <form #loginForm="ngForm" (ngSubmit)="login(); $event.preventDefault()">
+
+                        <div class="mb-3">
+                            <label class="form-label">Username</label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                name="username"
+                                [(ngModel)]="loginData.username"
+                                required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+
+                            <input
+                                type="password"
+                                class="form-control"
+                                name="password"
+                                [(ngModel)]="loginData.password"
+                                required>
+                        </div>
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary w-100">
+
+                            Login
+
+                        </button>
+
+                    </form>
+
+                    <hr>
+
+                    <p class="text-center">
+
+                        Don't have an account?
+
+                        <a routerLink="/register">
+
+                            Register
+
+                        </a>
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

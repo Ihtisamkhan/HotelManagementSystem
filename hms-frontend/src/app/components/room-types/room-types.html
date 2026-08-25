@@ -1,0 +1,170 @@
+<div class="container mt-4">
+
+    <h2 class="text-center mb-4">
+        Room Type Management
+    </h2>
+
+    <!-- Form -->
+
+    <div class="card shadow mb-4">
+
+        <div class="card-header">
+
+            <h4>
+
+                {{ isEdit ? 'Update Room Type' : 'Add Room Type' }}
+
+            </h4>
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="mb-3">
+
+                <label class="form-label">
+                    Room Type Name
+                </label>
+
+                <input
+                    type="text"
+                    class="form-control"
+                    [(ngModel)]="roomType.name">
+
+            </div>
+
+            <div class="mb-3">
+
+                <label class="form-label">
+                    Description
+                </label>
+
+                <textarea
+                    rows="3"
+                    class="form-control"
+                    [(ngModel)]="roomType.description">
+
+                </textarea>
+
+            </div>
+
+            <button
+                class="btn btn-success me-2"
+                (click)="saveRoomType()">
+
+                {{ isEdit ? 'Update' : 'Save' }}
+
+            </button>
+
+            <button
+                *ngIf="isEdit"
+                class="btn btn-secondary"
+                (click)="cancelEdit()">
+
+                Cancel
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- Table -->
+
+    <div class="card shadow">
+
+        <div class="card-header">
+
+            <h4>
+                Room Types
+            </h4>
+
+        </div>
+
+        <div class="card-body">
+
+            <table class="table table-bordered table-hover">
+
+                <thead class="table-dark">
+
+                    <tr>
+
+                        <th>ID</th>
+
+                        <th>Name</th>
+
+                        <th>Description</th>
+
+                        <th width="180">
+                            Actions
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr *ngFor="let roomType of roomTypes">
+
+                        <td>
+
+                            {{ roomType.roomTypeId }}
+
+                        </td>
+
+                        <td>
+
+                            {{ roomType.name }}
+
+                        </td>
+
+                        <td>
+
+                            {{ roomType.description }}
+
+                        </td>
+
+                        <td>
+
+                            <button
+                                class="btn btn-warning btn-sm me-2"
+                                (click)="editRoomType(roomType)">
+
+                                Edit
+
+                            </button>
+
+                            <button
+                                class="btn btn-danger btn-sm"
+                                (click)="deleteRoomType(roomType.roomTypeId)">
+
+                                Delete
+
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                    <tr *ngIf="roomTypes.length == 0">
+
+                        <td
+                            colspan="4"
+                            class="text-center">
+
+                            No Room Types Found
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>

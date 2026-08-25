@@ -1,0 +1,69 @@
+<div class="container mt-4">
+
+    <h2 class="mb-4">
+        Task Status
+    </h2>
+
+    <table class="table table-bordered table-hover">
+
+        <thead class="table-dark">
+
+            <tr>
+
+                <th>Task</th>
+
+                <th>Staff</th>
+
+                <th>Room No</th>
+
+                <th>Room Type</th>
+
+                <th>Assigned Date</th>
+
+                <th>Status</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr *ngFor="let task of tasks">
+
+                <td>{{ task.taskTitle }}</td>
+
+                <td>{{ task.staffName }}</td>
+
+                <td>{{ task.roomNumber }}</td>
+
+                <td>{{ task.roomType }}</td>
+
+                <td>{{ task.assignedDate | date:'dd-MM-yyyy' }}</td>
+
+                <td>
+
+                    <span
+                        class="badge bg-warning"
+                        *ngIf="task.status=='Pending'">
+
+                        Pending
+
+                    </span>
+
+                    <span
+                        class="badge bg-success"
+                        *ngIf="task.status=='Completed'">
+
+                        Completed
+
+                    </span>
+
+                </td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
