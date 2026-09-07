@@ -18,9 +18,9 @@ namespace HMS.API.Controllers
             _bookingService = bookingService;
         }
 
-        // ============================================
+       
         // CUSTOMER
-        // ============================================
+        
 
         [Authorize(Roles = Roles.Customer)]
         [HttpPost]
@@ -97,9 +97,9 @@ namespace HMS.API.Controllers
             });
         }
 
-        // ============================================
+        
         // RECEPTIONIST
-        // ============================================
+        
 
         [Authorize(Roles = Roles.Receptionist)]
         [HttpGet("pending")]
@@ -149,9 +149,9 @@ namespace HMS.API.Controllers
             return Ok(result);
         }
 
-        // ============================================
+        
         // OWNER & MANAGER
-        // ============================================
+        
 
         [Authorize(Roles = Roles.Manager + "," + Roles.Owner)]
         [HttpGet("all")]
@@ -171,9 +171,9 @@ namespace HMS.API.Controllers
             return Ok(bookings);
         }
 
-        // ============================================
+        
         // OWNER DASHBOARD
-        // ============================================
+        
 
         [Authorize(Roles = Roles.Owner)]
         [HttpGet("accepted")]

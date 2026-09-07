@@ -47,10 +47,10 @@ namespace HMS.Application.Mappings
             CreateMap<UpdateRoomdto, Room>();
 
             CreateMap<Room, Roomdto>()
-     .ForMember(dest => dest.RoomTypeName,
-         opt => opt.MapFrom(src => src.RoomType.Name))
-     .ForMember(dest => dest.CustomerName,
-         opt => opt.MapFrom(src =>
+                .ForMember(dest => dest.RoomTypeName,
+                    opt => opt.MapFrom(src => src.RoomType.Name))
+                .ForMember(dest => dest.CustomerName,
+                    opt => opt.MapFrom(src =>
              src.Bookings
                  .Where(b => b.Status == BookingStatus.Accepted || b.Status == BookingStatus.CheckedIn)
                  .OrderByDescending(b => b.BookingDate)
