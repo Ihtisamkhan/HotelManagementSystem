@@ -41,8 +41,8 @@ namespace HMS.Persistence.Configurations
                    .OnDelete(DeleteBehavior.Restrict);
 
             builder.Property(x => x.PricePerNight)
-       .HasPrecision(18, 2)
-       .IsRequired();
+                   .HasPrecision(18, 2)
+                   .IsRequired();
         }
     }
 }

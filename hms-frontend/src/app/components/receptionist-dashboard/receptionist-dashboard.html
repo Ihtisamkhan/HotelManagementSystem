@@ -4,13 +4,18 @@
         Receptionist Dashboard
     </h2>
 
+
+    <!-- ============================= -->
     <!-- Booking Management -->
+    <!-- ============================= -->
 
     <h3 class="mb-3">
         Booking Management
     </h3>
 
     <div class="row">
+
+        <!-- Pending Bookings -->
 
         <div class="col-md-6 mb-4">
 
@@ -38,6 +43,9 @@
 
         </div>
 
+
+        <!-- Booking History -->
+
         <div class="col-md-6 mb-4">
 
             <div class="card shadow h-100">
@@ -61,6 +69,183 @@
                 </div>
 
             </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ============================= -->
+    <!-- Room Management -->
+    <!-- ============================= -->
+
+    <h3 class="mb-3 mt-4">
+        Room Search
+    </h3>
+
+
+    <div class="card shadow mb-5">
+
+        <div class="card-body">
+
+
+            <!-- Search + Status -->
+
+            <div class="row mb-4">
+
+                <!-- Search -->
+
+                <div class="col-md-8 mb-3 mb-md-0">
+
+                    <label class="form-label">
+                        Search Room
+                    </label>
+
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Search by room number, type or floor"
+                        [(ngModel)]="searchText"
+                        (input)="filterRooms()">
+
+                </div>
+
+
+                <!-- Status -->
+
+                <div class="col-md-4">
+
+                    <label class="form-label">
+                        Room Status
+                    </label>
+
+                    <select
+                        class="form-select"
+                        [(ngModel)]="selectedStatus"
+                        (change)="filterRooms()">
+
+                        <option value="All">
+                            All
+                        </option>
+
+                        <option value="Available">
+                            Available
+                        </option>
+
+                        <option value="Occupied">
+                            Occupied
+                        </option>
+
+                        <option value="Cleaning">
+                            Cleaning
+                        </option>
+
+                        <option value="Maintenance">
+                            Maintenance
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- Room Table -->
+
+            <div class="table-responsive">
+
+                <table class="table table-bordered table-hover">
+
+                    <thead class="table-light">
+
+                        <tr>
+
+                            <th>
+                                Room
+                            </th>
+
+                            <th>
+                                Room Type
+                            </th>
+
+                            <th>
+                                Size
+                            </th>
+
+                            <th>
+                                Floor
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr *ngFor="let room of filteredRooms">
+
+                            <td>
+                                {{ room.roomNumber }}
+                            </td>
+
+                            <td>
+                                {{ room.roomTypeName }}
+                            </td>
+
+                            <td>
+                                {{ room.roomSize }}
+                            </td>
+
+                            <td>
+                                {{ room.floor || 'N/A' }}
+                            </td>
+
+                            <td>
+
+                                <span
+                                    class="badge"
+                                    [ngClass]="{
+                                        'text-bg-success': room.status === 0,
+                                        'text-bg-danger': room.status === 1,
+                                        'text-bg-warning': room.status === 2,
+                                        'text-bg-secondary': room.status === 3
+                                    }">
+
+                                    {{ getStatus(room.status) }}
+
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+                        <!-- No rooms found -->
+
+                        <tr *ngIf="filteredRooms.length === 0">
+
+                            <td
+                                colspan="5"
+                                class="text-center">
+
+                                No rooms found.
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
 
         </div>
 

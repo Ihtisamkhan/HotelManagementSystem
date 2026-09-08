@@ -39,9 +39,9 @@ namespace HMS.Persistence.Repositories
         }
 
         public async Task<bool> HasOverlappingBookingAsync(
-    int roomId,
-    DateTime checkInDate,
-    DateTime checkOutDate)
+             int roomId,
+             DateTime checkInDate,
+             DateTime checkOutDate)
         {
             return await _context.Bookings.AnyAsync(x =>
                 x.RoomId == roomId &&

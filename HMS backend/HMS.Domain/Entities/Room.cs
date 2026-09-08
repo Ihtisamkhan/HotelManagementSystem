@@ -15,7 +15,7 @@ namespace HMS.Domain.Entities
 
         public int RoomTypeId { get; set; }
 
-        public string RoomSize { get; set; }
+        public string RoomSize { get; set; } = string.Empty;
 
         public ICollection<Booking> Bookings { get; set; } = new List<Booking>();
 

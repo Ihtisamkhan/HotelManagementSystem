@@ -36,9 +36,9 @@ namespace HMS.Persistence.Configurations
                    .OnDelete(DeleteBehavior.Restrict);
 
             builder.HasOne(x => x.AssignedByUser)
-       .WithMany()
-       .HasForeignKey(x => x.AssignedByUserId)
-       .OnDelete(DeleteBehavior.Restrict);
+                     .WithMany()
+                     .HasForeignKey(x => x.AssignedByUserId)
+                     .OnDelete(DeleteBehavior.Restrict);
 
             // Room Relationship
             builder.HasOne(x => x.Room)
